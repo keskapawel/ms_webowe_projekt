@@ -7,7 +7,7 @@
 
 ## Installation
 
-1. Install all dependencies using `npm install` *clean install* command. 
+1. Install all dependencies using `npm install` command. 
 # Development
 
 ## Assets Source
