@@ -1,0 +1,89 @@
+@mixin media($media-width) {
+  @media only screen and (max-width: $media-width) {
+    @content;
+  }
+}
+
+@mixin mediamin($media-width) {
+  @media only screen and (min-width: $media-width) {
+    @content;
+  }
+}
+
+@mixin hoverAnimation {
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -4px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: $white;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@mixin boxShadow {
+  box-shadow: 1px 1px 3px 0 rgb(35 44 71 / 20%);
+}
+
+.container {
+  max-width: 940px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+h2.section_subtitle {
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  @include media(550px)
+  {font-size: 1.2rem;}
+}
+
+h3.section_smallSubtitle {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: 19px;
+  padding-bottom: 25px;
+  margin-top: 30px;
+}
+
+h3.section_smallSubtitle.shadow {
+  @include boxShadow;
+}
+
+@mixin mainButton{
+    border-radius: 20px;
+    padding: 12px 15px;
+    background-color: #232c47;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 30px !important;
+}
+
+a.main_button.blue{
+  background-color: #232c47;
+  @include mainButton;
+}
+a.main_button.center {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
