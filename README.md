@@ -84,3 +84,6 @@ $ npm run lint:sass
 ```sh
 $ npm run lint:js
 ```
+
+# GitHub Pages
+https://keskapawel.github.io/ms_webowe_projekt/dist/
