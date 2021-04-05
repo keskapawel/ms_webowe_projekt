@@ -8,6 +8,7 @@ module.exports = {
 
     /* Path to built files directory */
     output: path.resolve(__dirname, '../dist/'),
+    output: path.resolve(__dirname, '../root/'), //only for github pages purpose
   },
   server: {
     // host: '192.168.1.22',
