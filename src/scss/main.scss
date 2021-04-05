@@ -4,8 +4,88 @@ html {
 }
 
 body {
-  color: $white;
-  font-family: 'Montserrat', sans-serif;
+  color: $black;
+  font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
   box-sizing: border-box;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  background: $gray;
+  padding-top: 20px;
+  padding-bottom: 200px;
+  position: relative;
+
+  .container {
+    
+    >img {}
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: right;
+        align-items: center;
+        li.nav__item {
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $black;
+            margin-left: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            // add color on visited 
+          }
+        }
+      }
+    }
+    .main_content{
+      width: 480px;
+      display: flex;
+      flex-direction: column;
+      margin-left: calc(100% - 480px);
+      margin-top: 100px;
+      h1{
+        font-weight: 500;
+      }
+      p{
+        font-size: .9rem;
+        margin-top: 0;
+        color: $gray_text;
+        line-height: 1.7;
+      }
+      a.main_content__button{
+        @include button;
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.about_us{
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+  h2{}
+  p{
+    color: $gray_text;
+    letter-spacing: .5px;
+    line-height: 1.4;
+    font-size: .9rem;
+  }
+  >img{
+    max-width: 300px;
+    width: 100%;
+  }
 }

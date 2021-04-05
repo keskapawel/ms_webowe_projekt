@@ -1,2 +1,31 @@
+$white: #ffffff;
+$black: #191919;
+$gray: #e9e9e9;
+$gray_text: #818181;
+$green_blue: #10c9c3;
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 
+@mixin button {
+    color: $white;
+    background: $green_blue;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 23px 25px 15px;
+    margin: 0 auto;
+    width: 180px;
+    text-align: center;
+    height: 60px;
+    box-sizing: border-box;
+    display: inline-block;
+}
