@@ -134,7 +134,7 @@ header {
       .content {
         max-width: 500px;
         margin-top: 150px;
-        margin-left: 12%;
+        margin-left: 11%;
 
         .progress {
           @include progressBar;
@@ -150,6 +150,44 @@ header {
             &:nth-child(3) {
               margin-top: 40px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.summary {
+  background: $green_blue;
+  height: 250px;
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    >.single {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      >img{
+
+      }
+      .description{
+        color: $white;
+        margin-left: 20px;
+        p{
+          padding: 0;
+          margin: 0;
+          // font-weight: 300;
+          font-size: 0.65rem;
+          text-transform: uppercase;
+          &.header{
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
           }
         }
       }
