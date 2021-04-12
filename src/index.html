@@ -18,7 +18,8 @@
       <nav>
         <img src="./images/content/logo.png" alt="Logo">
         <ul>
-          <li class="nav__item"><a href="wp.pl" target="_blank" rel="nofollow" title="" class="nav__item_link">home</a>
+          <li class="nav__item"><a href="https://www.wp.pl" target="_blank" rel="nofollow" title=""
+              class="nav__item_link">home</a>
           </li>
           <li class="nav__item"><a href="#" rel="nofollow" title="" class="nav__item_link">about</a></li>
           <li class="nav__item"><a href="#" rel="nofollow" title="" class="nav__item_link">work</a></li>
@@ -35,7 +36,12 @@
           20&nbsp;years of combined experience, and know a thing or two
           about designing websites and mobile apps.
         </p>
-        <a href="#" class="main_content__button" rel="nofollow">contact us</a>
+        <a href="#" class="main_content__button" rel="nofollow">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%" />
+          </svg>
+          contact us
+        </a>
       </div>
     </div>
   </header>
@@ -50,13 +56,43 @@
   <section class="section skills" id="skills">
     <div class="dual">
       <div class="single">
-        <h3>
-          Professional Sills
-        </h3>
+        <div class="content">
+          <h2>
+            Professional Sills
+          </h2>
+          <div class="progress">
+            <!-- <div class="single">
+            <label for="ux">File progress:</label><br />
+            <progress id="ux" max="100" value="75"> 70% </progress>
+          </div>
+          <div class="single">
+            <label for="webDev">File progress:</label><br />
+            <progress id="webDev" max="100" value="90"> 70% </progress>
+          </div>
+          <div class="single">
+            <label for="marketing">File progress:</label><br />
+            <progress id="marketing" max="100" value="65"> 70% </progress>
+          </div> -->
+            <div class="description">UI/UX Design</div>
+            <div class="meter">
+              <span style="width:75%;"><span class="progress"></span></span>
+            </div>
+            <div class="description">Web Development</div>
+            <div class="meter">
+              <span style="width:90%;"><span class="progress"></span></span>
+            </div>
+            <div class="description">Marketing</div>
+            <div class="meter">
+              <span style="width:65%;"><span class="progress"></span></span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="single"></div>
     </div>
   </section>
+
+  <section style="height: 100vh;"></section>
 
 </body>
 

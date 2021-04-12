@@ -28,4 +28,88 @@ $green_blue: #10c9c3;
     height: 60px;
     box-sizing: border-box;
     display: inline-block;
+    position: relative;
+    width: 100%;
+
+    svg {
+        height: 60px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    rect {
+        fill: none;
+        stroke: $gray;
+        stroke-width: 5;
+        stroke-dasharray: 422, 0;
+        transition: all 0.35s linear;
+    }
+    &:hover {
+        font-weight: 900;
+        letter-spacing: 1px;
+
+        rect {
+            stroke-width: 5;
+            stroke: #fff;
+            stroke-dasharray: 15, 310;
+            stroke-dashoffset: 48;
+            transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    }
+    
+}
+
+@mixin linkHover {
+    a {
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
+    }
+
+    a::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width .3s;
+    }
+
+    a:hover::after {
+        width: 100%;
+        //transition: width .3s;
+    }
+}
+
+//progress bar
+@mixin progressBar {
+    .meter.true {
+        height: 5px;
+        position: relative;
+        background: $gray;
+        overflow: hidden;
+    }
+
+    .meter.true span {
+        display: block;
+        height: 100%;
+
+        >.progress {
+            background-color: $green_blue;
+            animation: progressBar 3s ease-in-out;
+            animation-fill-mode: both;
+        }
+    }
+
+    @keyframes progressBar {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
 }
