@@ -5,7 +5,7 @@ html {
 
 body {
   color: $black;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #ffffff;
   box-sizing: border-box;
   max-width: 1920px;
@@ -13,15 +13,15 @@ body {
   margin: 0 auto;
 }
 
-header {
+header.mainHeader {
   background: $gray;
   padding-top: 20px;
   padding-bottom: 200px;
   position: relative;
 
   .container {
-
-    >img {}
+    > img {
+    }
 
     nav {
       display: flex;
@@ -45,7 +45,7 @@ header {
             margin-left: 20px;
             font-size: 0.75rem;
             font-weight: 500;
-            // add color on visited 
+            // add color on visited
             // &:visited{
             //   color: $green_blue
             // }
@@ -66,7 +66,7 @@ header {
       }
 
       p {
-        font-size: .9rem;
+        font-size: 0.9rem;
         margin-top: 0;
         color: $gray_text;
         line-height: 1.7;
@@ -89,16 +89,17 @@ header {
   margin-bottom: 80px;
   text-align: center;
 
-  h2 {}
+  h2 {
+  }
 
   p {
     color: $gray_text;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 1.4;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
-  >img {
+  > img {
     max-width: 300px;
     width: 100%;
   }
@@ -109,9 +110,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    // min-width: 
+    // min-width:
 
-    >.single {
+    > .single {
       width: 100%;
       height: 100%;
 
@@ -139,7 +140,7 @@ header {
         .progress {
           @include progressBar;
 
-          >.description {
+          > .description {
             text-transform: uppercase;
             margin-bottom: 20px;
             font-size: 0.8rem;
@@ -168,27 +169,165 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    >.single {
+    > .single {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      >img{
-
+      > img {
       }
-      .description{
+      .description {
         color: $white;
         margin-left: 20px;
-        p{
+        p {
           padding: 0;
           margin: 0;
           // font-weight: 300;
           font-size: 0.65rem;
           text-transform: uppercase;
-          &.header{
+          &.header {
             margin-bottom: 10px;
             font-weight: 500;
             font-size: 0.9rem;
           }
+        }
+      }
+    }
+  }
+}
+
+.linkBoxes {
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    .box {
+      height: calc(350px - 50px - 1vw);
+      // height: 100%;
+      max-width: 25%;
+      width: 100%;
+      background: $gray_dark;
+      position: relative;
+      &:nth-child(even) {
+        background: $gray_light;
+      }
+      &.second {
+        background: $gray_light;
+        &:nth-child(even) {
+          background: $gray_dark;
+        }
+      }
+      &::first-line {
+        background: red;
+      }
+      > .description {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition-timing-function: linear;
+        transition: 0.5s ease;
+        background-color: $dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          opacity: 1;
+        }
+        > img {
+        }
+      }
+    }
+  }
+}
+
+.ourWork {
+  margin-top: 100px;
+  .container {
+    header {
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 30px;
+      > h2 {
+      }
+      > p.description {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .content {
+    .video-container {
+      margin: 0;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%;
+      background-color: $gray;
+      position: relative;
+      .iframe_button {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        > img {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+          top: 0;
+          bottom: 0;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+      }
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.advert {
+  background: $gray;
+  margin-top: 100px;
+  padding-top: 55px;
+  padding-bottom: 90px;
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    .single {
+      max-width: 25%;
+      width: 100%;
+      margin-top: 35px;
+      >img{
+
+      }
+      .description{
+        margin: 0 auto;
+        max-width: 80%;
+        width: 100%;
+        p.header{
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 0.7rem
+        }
+        p:not(.header){
+          font-size: 0.65rem;
+          line-height: 1.6;
         }
       }
     }
