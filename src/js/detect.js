@@ -4,12 +4,12 @@ function isInViewport(el) {
     rect.top >= -500 &&
     rect.left >= 0 &&
     rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) + 500 &&
+      (window.innerHeight || document.documentElement.clientHeight) + 200 &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
 
-const box = document.querySelector(".skills");
+const box = document.querySelector(".skills_container");
 const meter = document.querySelectorAll(".meter");
 const randomNumber = Math.floor(Math.random() * 20) + 1;
 const numbersBox = document.querySelector("#summary");
