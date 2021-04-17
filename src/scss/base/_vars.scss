@@ -94,6 +94,8 @@ $dark: #252525;
         position: relative;
         background: $gray;
         overflow: hidden;
+        max-width: 100%;
+        width: 95%;
     }
 
     .meter.true span {
