@@ -18,10 +18,22 @@ header.mainHeader {
   padding-top: 20px;
   padding-bottom: 200px;
   position: relative;
+  background-image: url('../images/content/main_banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &:after {
+    position: absolute;
+    background: linear-gradient(rgba(188, 195, 202, .1) 60%, rgb(255, 255, 255) 100%);
+    opacity: 0.8;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    content: '';
+  }
 
   .container {
-    > img {
-    }
+    >img {}
 
     nav {
       display: flex;
@@ -90,8 +102,7 @@ header.mainHeader {
   margin-bottom: 80px;
   text-align: center;
 
-  h2 {
-  }
+  h2 {}
 
   p {
     color: $gray_text;
@@ -100,7 +111,7 @@ header.mainHeader {
     font-size: 0.9rem;
   }
 
-  > img {
+  >img {
     max-width: 300px;
     width: 100%;
   }
@@ -113,7 +124,7 @@ header.mainHeader {
     justify-content: center;
     // min-width:
 
-    > .single {
+    >.single {
       width: 100%;
       height: 100%;
 
@@ -131,6 +142,11 @@ header.mainHeader {
         width: 100%;
         max-height: 100%;
         height: 570px;
+
+        >img {
+          max-width: 100%;
+          height: 100%;
+        }
       }
 
       .content {
@@ -141,7 +157,7 @@ header.mainHeader {
         .progress {
           @include progressBar;
 
-          > .description {
+          >.description {
             text-transform: uppercase;
             margin-bottom: 20px;
             font-size: 0.8rem;
@@ -170,21 +186,24 @@ header.mainHeader {
     align-items: center;
     justify-content: space-between;
 
-    > .single {
+    >.single {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      > img {
-      }
+
+      >img {}
+
       .description {
         color: $white;
         margin-left: 20px;
+
         p {
           padding: 0;
           margin: 0;
           // font-weight: 300;
           font-size: 0.65rem;
           text-transform: uppercase;
+
           &.header {
             margin-bottom: 10px;
             font-weight: 500;
@@ -203,6 +222,7 @@ header.mainHeader {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+
     .box {
       height: calc(350px - 50px - 1vw);
       // height: 100%;
@@ -210,19 +230,28 @@ header.mainHeader {
       width: 100%;
       background: $gray_dark;
       position: relative;
+
       &:nth-child(even) {
         background: $gray_light;
       }
+
+      &.work_elements_hidden {
+        display: none;
+      }
+
       &.second {
         background: $gray_light;
+
         &:nth-child(even) {
           background: $gray_dark;
         }
       }
+
       &::first-line {
         background: red;
       }
-      > .description {
+
+      >.description {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -237,31 +266,47 @@ header.mainHeader {
         display: flex;
         align-items: center;
         justify-content: center;
+
         &:hover {
           opacity: 1;
         }
-        > img {
-        }
+
+        >img {}
       }
     }
+  }
+
+  >h3 {
+    background: #f5f5f5;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+    color: $gray-text;
+    font-size: 0.8rem;
   }
 }
 
 .ourWork {
   margin-top: 100px;
+
   .container {
     header {
       width: 500px;
       margin: 0 auto;
       text-align: center;
       margin-bottom: 30px;
-      > h2 {
-      }
-      > p.description {
+
+      >h2 {}
+
+      >p.description {
         font-size: 0.8rem;
+        color: $gray-text;
       }
     }
   }
+
   .content {
     .video-container {
       margin: 0;
@@ -270,13 +315,15 @@ header.mainHeader {
       padding-top: 56.25%;
       background-color: $gray;
       position: relative;
+
       .iframe_button {
         width: 100%;
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        > img {
+
+        >img {
           position: absolute;
           left: 0;
           right: 0;
@@ -289,6 +336,7 @@ header.mainHeader {
         }
       }
     }
+
     .video-container iframe {
       width: 100%;
       height: 100%;
@@ -304,31 +352,167 @@ header.mainHeader {
   margin-top: 100px;
   padding-top: 55px;
   padding-bottom: 90px;
-  .container{
+
+  .container {
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
+    justify-content: center;
+    // justify-content: space-between;
     flex-wrap: wrap;
     text-align: center;
+
     .single {
       max-width: 25%;
       width: 100%;
       margin-top: 35px;
-      >img{
+      min-width: 250px;
+      justify-content: center;
 
-      }
-      .description{
+      >img {}
+
+      .description {
         margin: 0 auto;
         max-width: 80%;
         width: 100%;
-        p.header{
+
+        p.header {
           font-weight: 600;
           text-transform: uppercase;
           font-size: 0.7rem
         }
-        p:not(.header){
+
+        p:not(.header) {
           font-size: 0.65rem;
           line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+.greenBox {
+  background: $green_blue;
+  // max-height: 500px;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 130px;
+  padding-bottom: 60px;
+
+  .content {
+    max-width: 830px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    color: $white;
+
+    h2 {
+      font-weight: 300;
+      line-height: 1.5;
+      font-size: 27px;
+    }
+
+    p.description {
+      opacity: .9;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: .8rem;
+    }
+  }
+
+  >img {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+}
+
+.logos {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    >img {
+      max-width: 100%;
+      width: auto;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.contact {
+  background: #f5f5f5;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .content {
+    max-width: 675px;
+    width: 95%;
+    margin: 0 auto;
+
+    >h2 {
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    p.description {
+      color: $gray-text;
+      font-size: .8rem;
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    form {
+      input {
+        height: 50px;
+      }
+
+      input,
+      textarea {
+        margin-top: 30px;
+        padding: 15px;
+        color: $gray-text;
+        font-size: .7rem;
+        border: none;
+      }
+
+      textarea {
+        height: 170px;
+      }
+
+      #email {
+        margin-left: 9%;
+      }
+
+      #name,
+      #email {
+        max-width: 45%;
+        width: 100%;
+      }
+
+      #title,
+      #comment {
+        width: 100%;
+      }
+
+      .button {
+        text-align: center;
+        a.main_content__button {
+          @include button;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 20px;
+          max-width: 200px;
         }
       }
     }
