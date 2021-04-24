@@ -5,17 +5,16 @@ fadeOutEffect = () => {
     window.addEventListener('scroll', window.scrollTo(0, 0));
     var fadeEffect = setInterval(function () {
         if (!fadeTarget.style.opacity) {
-            fadeTarget.style.opacity = 1;
-            bodyFade.style.opacity = 1;
-            enableScroll();
+                bodyFade.style.opacity = 1;
+                fadeTarget.style.opacity = 1;
+                enableScroll();
         }
         if (fadeTarget.style.opacity > 0) {
+            bodyFade.style.opacity = 1;
             fadeTarget.style.opacity -= 1;
             setTimeout(() => {
                 fadeTarget.style.display = "none";
-                enableScroll();
-            }, 200);
-            bodyFade.style.opacity = 1;
+            }, 500);
             enableScroll();
         } else {
             enableScroll();
