@@ -20,7 +20,7 @@ fadeOutEffect = () => {
             enableScroll();
             clearInterval(fadeEffect);
         }
-        window.scrollto(0, 0);
+        window.scrollTo(0, 0);
     }, 2000);
 }
 
