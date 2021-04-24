@@ -72,18 +72,5 @@ $ npm run production
 * _Fonts_ are located under `/dist/fonts/`
 * _HTML_ files are located under `/dist/`
 
-# Run Code Style Linters
-
-## SASS
-
-```sh
-$ npm run lint:sass
-```
-## JavaScript
-
-```sh
-$ npm run lint:js
-```
-
 # GitHub Pages
 https://keskapawel.github.io/ms_webowe_projekt/dist/
