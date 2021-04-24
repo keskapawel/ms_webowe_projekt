@@ -10,8 +10,8 @@ module.exports = {
     output: path.resolve(__dirname, '../dist/'),
   },
   server: {
-    // host: '192.168.1.22',
-    host: 'localhost',
+    host: '192.168.1.32',
+    // host: 'localhost',
     port: 8000,
   },
   limits: {

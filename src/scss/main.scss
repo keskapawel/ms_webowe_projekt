@@ -1,6 +1,10 @@
 html {
   scroll-behavior: smooth;
   font-size: 20px;
+
+  @include media(550px) {
+    font-size: 19px;
+  }
 }
 
 body {
@@ -21,6 +25,10 @@ header.mainHeader {
   background-image: url('../images/content/main_banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+
+  @include media(500px) {
+    padding-bottom: 100px;
+  }
 
   &:after {
     position: absolute;
@@ -48,7 +56,7 @@ header.mainHeader {
         align-items: center;
 
         li.nav__item {
-          @include linkHover;
+          @include linkHover($black);
 
           a {
             text-transform: uppercase;
@@ -67,11 +75,19 @@ header.mainHeader {
     }
 
     .main_content {
-      width: 480px;
+      max-width: 480px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       margin-left: calc(100% - 480px);
       margin-top: 100px;
+
+      @include media(650px) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        text-align: center;
+      }
 
       h1 {
         font-weight: 500;
@@ -89,6 +105,9 @@ header.mainHeader {
         margin-left: 0;
         margin-top: 20px;
         max-width: 200px;
+        @include media(650px){
+          
+        }
       }
     }
   }
@@ -102,6 +121,10 @@ header.mainHeader {
   margin-bottom: 80px;
   text-align: center;
 
+  @include media(450px) {
+    max-width: 95%;
+  }
+
   h2 {}
 
   p {
@@ -114,6 +137,10 @@ header.mainHeader {
   >img {
     max-width: 300px;
     width: 100%;
+
+    @include media(450px) {
+      max-width: 300px;
+    }
   }
 }
 
@@ -134,6 +161,12 @@ header.mainHeader {
         width: 100%;
         max-height: 100%;
         height: 570px;
+
+        @include media(900px) {
+          max-width: 100%;
+          height: auto;
+          padding-bottom: 70px;
+        }
       }
 
       &:nth-child(2) {
@@ -143,9 +176,14 @@ header.mainHeader {
         max-height: 100%;
         height: 570px;
 
+        @include media(900px) {
+          display: none;
+        }
+
         >img {
           max-width: 100%;
           height: 100%;
+          width: 100%;
         }
       }
 
@@ -153,6 +191,15 @@ header.mainHeader {
         max-width: 500px;
         margin-top: 150px;
         margin-left: 11%;
+
+        @include media(900px) {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 660px;
+          padding-left: 30px;
+          padding-right: 30px;
+          margin-top: 50px;
+        }
 
         .progress {
           @include progressBar;
@@ -181,15 +228,33 @@ header.mainHeader {
   display: flex;
   align-items: center;
 
+  @include media(500px) {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include media(500px) {
+      width: min-content;
+    }
 
     >.single {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 20px;
+
+      @include media(500px) {
+        width: max-content;
+      }
 
       >img {}
 
@@ -230,6 +295,14 @@ header.mainHeader {
       width: 100%;
       background: $gray_dark;
       position: relative;
+
+      @include media(500px) {
+        height: 220px;
+      }
+
+      @include media(380px) {
+        height: 150px;
+      }
 
       &:nth-child(even) {
         background: $gray_light;
@@ -285,6 +358,11 @@ header.mainHeader {
     text-transform: uppercase;
     color: $gray-text;
     font-size: 0.8rem;
+    cursor: pointer;
+
+    @include media(450px) {
+      font-size: .7rem;
+    }
   }
 }
 
@@ -293,7 +371,8 @@ header.mainHeader {
 
   .container {
     header {
-      width: 500px;
+      max-width: 500px;
+      width: 100%;
       margin: 0 auto;
       text-align: center;
       margin-bottom: 30px;
@@ -333,6 +412,10 @@ header.mainHeader {
           bottom: 0;
           margin-top: auto;
           margin-bottom: auto;
+
+          @include media(450px) {
+            width: 100px;
+          }
         }
       }
     }
@@ -352,6 +435,11 @@ header.mainHeader {
   margin-top: 100px;
   padding-top: 55px;
   padding-bottom: 90px;
+
+  @include media(500px) {
+    padding-top: 25px;
+    padding-bottom: 50px;
+  }
 
   .container {
     display: flex;
@@ -398,6 +486,10 @@ header.mainHeader {
   padding-top: 130px;
   padding-bottom: 60px;
 
+  @include media(500px) {
+    padding-top: 60px;
+  }
+
   .content {
     max-width: 830px;
     text-align: center;
@@ -405,10 +497,18 @@ header.mainHeader {
     margin: 0 auto;
     color: $white;
 
+    @include media(450px) {
+      max-width: 95%;
+    }
+
     h2 {
       font-weight: 300;
       line-height: 1.5;
       font-size: 27px;
+
+      @include media(500px) {
+        font-size: 23px;
+      }
     }
 
     p.description {
@@ -452,6 +552,11 @@ header.mainHeader {
   padding-top: 100px;
   padding-bottom: 100px;
 
+  @include media(500px) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
   .content {
     max-width: 675px;
     width: 95%;
@@ -473,6 +578,40 @@ header.mainHeader {
     }
 
     form {
+      #messageSend {
+        text-align: center;
+        margin-top: 40px;
+        font-weight: 400;
+        text-decoration: underline;
+        display: none;
+      }
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        @include media(650px) {
+          flex-direction: column;
+        }
+      }
+
+      .single {
+        display: flex;
+        flex-direction: column;
+
+        @include media(650px) {
+          width: 100%;
+        }
+
+        >span {
+          margin-top: 5px;
+          font-size: .6rem;
+          color: red;
+          display: none;
+        }
+      }
+
       input {
         height: 50px;
       }
@@ -491,13 +630,18 @@ header.mainHeader {
       }
 
       #email {
-        margin-left: 9%;
+        // margin-left: 9%;
       }
 
       #name,
       #email {
-        max-width: 45%;
-        width: 100%;
+        // max-width: 45%;
+        // width: 100%;
+        width: 300px;
+
+        @include media(650px) {
+          width: 100%;
+        }
       }
 
       #title,
@@ -507,6 +651,7 @@ header.mainHeader {
 
       .button {
         text-align: center;
+
         a.main_content__button {
           @include button;
           margin-left: auto;
@@ -518,3 +663,120 @@ header.mainHeader {
     }
   }
 }
+
+footer {
+  background-color: #141414;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: #bcbcbc;
+
+  .content {
+    // max-width: 1160px;
+    max-width: 85%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    .single {
+      margin-left: 10px;
+      margin-right: 10px;
+
+      &.double {
+        display: flex;
+        justify-content: space-between;
+
+        .right {
+          margin-left: 50px;
+        }
+      }
+
+      p:not(.header),
+      a {
+        font-size: .8rem;
+        opacity: .9;
+      }
+
+      p.header {
+        color: $white;
+        font-size: initial;
+        font-size: 1.1rem;
+      }
+
+      @include linkHover(#bcbcbc);
+
+      a {
+        color: #bcbcbc;
+      }
+    }
+  }
+}
+
+
+.loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #f5f7f9;
+  z-index: 2147483647;
+  transition: all .3s ease 0s;
+  opacity: 1;
+  visibility: visible;
+  height: 100vh;
+  width: 99.9vw;
+  overflow: hidden
+}
+
+.loader_container {
+  margin: 0 auto
+}
+
+.loader_container div.img img {
+  max-width: 50px;
+  width: 100px;
+  text-align: center;
+  display: block;
+  margin: 0 auto
+}
+
+.loader_container div.animator {
+  height: 6px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  width: 120px;
+  border-radius: 2px
+}
+
+.loader_container div.animator .line {
+  animation: grojAY 2s ease-in-out 0s infinite normal none running;
+  background: -webkit-gradient(linear, left top, right top, from(#121624), to(#4693a7));
+  background: linear-gradient(90deg, #121624 0, #4693a7);
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  border-radius: 2px
+}
+
+@keyframes grojAY {
+  0% {
+    left: -15%
+  }
+
+  50% {
+    left: 80px
+  }
+
+  to {
+    left: -15%
+  }
+}
+
+// #fade {
+//   opacity: 0
+// }
